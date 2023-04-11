@@ -1,7 +1,7 @@
 
 #-----------CREDITS -----------
-# telegram : @itz_legend_coder
-# github : noob-mukesh
+# telegram : @salaar_op
+# github : salaar
 from pyrogram import Client, filters,enums,idle
 from pyrogram.errors import ApiIdInvalid, ApiIdPublishedFlood, AccessTokenInvalid
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
@@ -16,14 +16,14 @@ from random import choice
 from datetime import datetime
 import logging
 
-FORMAT = "[LEGEND-MUKESH] %(message)s"
+FORMAT = "[salaar] %(message)s"
 logging.basicConfig(
     level=logging.WARNING, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 )
 
 
 StartTime = time.time()
-Mukesh = Client(
+salaar = Client(
     "chat-gpt" ,
     api_id = API_ID,
     api_hash = API_HASH ,
@@ -95,7 +95,7 @@ PNG_BTN = [
      ],
 ]
 SOURCE_BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton('sᴏᴜʀᴄᴇ', url=f"{SOURCE}")]])
-HELP_READ = "➻ ᴜsᴇ /chatgpt write a simple flask app in python.  \n\n **➻ ᴜsᴇ /ping ᴛᴏ ᴄʜᴇᴄᴋ ᴛʜᴇ ᴘɪɴɢ ᴏғ ᴛʜᴇ ʙᴏᴛ.**\n\n©️ @mr_sukkun**"
+HELP_READ = "➻ ᴜsᴇ /chatgpt write a simple flask app in python.  \n\n **➻ ᴜsᴇ /ping ᴛᴏ ᴄʜᴇᴄᴋ ᴛʜᴇ ᴘɪɴɢ ᴏғ ᴛʜᴇ ʙᴏᴛ.**\n\n©️ @salaar_op**"
 HELP_BACK = [
      [
            InlineKeyboardButton(text="Qᴜᴇꜱᴛɪᴏɴ ᴛʜᴀᴛ ᴄʜᴀᴛɢᴘᴛ ᴄᴀɴ ꜱᴏʟᴠᴇ ", url=f"https://t.me/{UPDATE_CHNL}/528"),
@@ -108,7 +108,7 @@ HELP_BACK = [
 
   
 #         start
-@Mukesh.on_message(filters.command(["start",f"start@{BOT_USERNAME}"]))
+@salaar.on_message(filters.command(["start",f"start@{BOT_USERNAME}"]))
 async def restart(client, m: Message):
         accha = await m.reply_text(
                         text = f"{g}")
@@ -139,13 +139,13 @@ async def cb_handler(Client, query: CallbackQuery):
                   reply_markup=InlineKeyboardMarkup(MAIN),
         )
     
-@Mukesh.on_message(filters.command(["help", f"help@{BOT_USERNAME}"], prefixes=["","+", ".", "/", "-", "?", "$"]))
+@salaar.on_message(filters.command(["help", f"help@{BOT_USERNAME}"], prefixes=["","+", ".", "/", "-", "?", "$"]))
 async def restart(client, message):
     hmm = await message.reply_text(
                         text = HELP_READ,
                         reply_markup= InlineKeyboardMarkup(HELP_BACK),
        )
-@Mukesh.on_message(filters.command(['source', 'repo'], prefixes=["","+", ".", "/", "-", "?", "$"]))
+@salaar.on_message(filters.command(['source', 'repo'], prefixes=["","+", ".", "/", "-", "?", "$"]))
 async def source(bot, m):
     
     await m.reply_photo(START_IMG, caption=SOURCE_TEXT, reply_markup=SOURCE_BUTTONS)
@@ -169,7 +169,7 @@ async def ping(client, message: Message):
 
 #  main   
 openai.api_key = OPENAI_KEY
-@Mukesh.on_message(filters.command(["chatgpt","ai","ask"],  prefixes=["","+", ".", "/", "-", "?", "$","#","&"]))
+@salaar.on_message(filters.command(["chatgpt","ai","ask"],  prefixes=["","+", ".", "/", "-", "?", "$","#","&"]))
 async def chat(bot, message):
     
     try:
@@ -201,10 +201,10 @@ if SOURCE != s:
     print("So sad, you have changed source, change it back to ` https://github.com/Noob-mukesh/Chatgpt-bot `  else I won't work")
     sys.exit(1)  
 if DEVELOPER!=u:
-    print("So sad, you have changed Updates, change it back to `ITz_LEGEND_CODER ` else I won't work")
+    print("So sad, you have changed Updates, change it back to `salaar_op ` else I won't work")
     sys.exit(1)
 if UPDATE_CHNL!=d:
-    print("So sad, you have change developer, change it back to `MR_SUKKUN ` else I won't work")
+    print("So sad, you have change developer, change it back to `salaar_op ` else I won't work")
     sys.exit(1)
 
 
@@ -212,14 +212,14 @@ if __name__ == "__main__":
     print(f""" {BOT_NAME} ɪs ᴀʟɪᴠᴇ!
     """)
     try:
-        Mukesh.start()
+        salaar.start()
         
         
     except (ApiIdInvalid, ApiIdPublishedFlood):
         raise Exception("Your API_ID/API_HASH is not valid.")
     except AccessTokenInvalid:
         raise Exception("Your BOT_TOKEN is not valid.")
-    print(f"""JOIN  @MR_SUKKUN
+    print(f"""JOIN  @salaar_op
 GIVE STAR TO THE REPO 
  {BOT_NAME} ɪs ᴀʟɪᴠᴇ!  
     """)
@@ -227,5 +227,5 @@ GIVE STAR TO THE REPO
     Mukesh.stop()
     print("Bot stopped. Bye !")
 #-----------CREDITS -----------
-# telegram : @itz_legend_coder
-# github : noob-mukesh
+# telegram : @salaar_op
+# github : salaar_op
